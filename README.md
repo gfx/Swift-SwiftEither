@@ -7,6 +7,20 @@ An Either pattern implementation in Swift
 ```swift
 import SwiftEither
 
+// helpers
+
+struct Error {
+    var reason: String
+    init(_ reason: String) { self.reason = reason }
+}
+
+func success(s: String) -> Either<String, Error> {
+    return Either(success: s)
+}
+func failure(s: String) -> Either<String, Error> {
+    return Either(failure: Error(s))
+}
+
 // 1. basic use
 let x = success("foo")
 // x represents either success:String or failure:Error
