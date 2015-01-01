@@ -2,5 +2,5 @@ language: objective-c
 before_script:
     - brew update && brew upgrade xctool
 xcode_project: SwiftEither.xcodeproj
-xcode_scheme: SwiftEitherTests
+xcode_scheme: SwiftEither
 xcode_sdk: iphonesimulator
