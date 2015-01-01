@@ -4,7 +4,7 @@ An Either pattern implementation in Swift
 
 # SYNOPSIS
 
-```
+```swift
 import SwiftEither
 
 // 1. basic use
