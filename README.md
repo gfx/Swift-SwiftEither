@@ -27,12 +27,12 @@ failure("error!").chain({ (m) -> Either<String, Error> in
 }) // "error!"
 
 // 3. Fallback operation, just like to null coalescing operator
-success("success").fallback({ () -> Either<String, Error> in
+success("success").fallback({
     return success("chained")
 }) // "success"
 
-failure("error!").fallback({ () -> Either<String, Error> in
-    return Either(success: "fallback")
+failure("error!").fallback({
+    return success("fallback")
 }) // "fallback"
 
 // fallback operator

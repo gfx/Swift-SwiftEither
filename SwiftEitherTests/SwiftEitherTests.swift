@@ -56,7 +56,9 @@ class SwiftEitherTests: XCTestCase {
     }
 
     func testFallbackMethodLeftUsed() {
-        let e = try(true, "foo").fallback({ self.try(true, "bar") })
+        let e = try(true, "foo").fallback({
+            return self.try(true, "bar")
+        })
 
         switch e {
         case .Success(let l):
@@ -67,7 +69,9 @@ class SwiftEitherTests: XCTestCase {
     }
 
     func testFallbackMethodRightUsed() {
-        let e = try(false, "foo").fallback({ self.try(true, "bar") })
+        let e = try(false, "foo").fallback({
+            return self.try(true, "bar")
+        })
 
         switch e {
         case .Success(let l):

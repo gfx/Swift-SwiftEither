@@ -43,15 +43,6 @@ public enum Either<S, F> {
         }
     }
 
-    public func fallback(f: () -> S) -> Either<S, F> {
-        switch self {
-        case .Success:
-            return self
-        case .Failure:
-            return Either(success: f())
-        }
-    }
-
     public func get() -> S {
         switch self {
         case .Success(let s):
@@ -90,7 +81,9 @@ public func ??<S, E>(left: Either<S, E>, right: @autoclosure () -> Either<S, E>)
 }
 
 public func ??<S, E>(left: Either<S, E>, right: @autoclosure () -> S) -> Either<S, E> {
-    return left.fallback(right)
+    return left.fallback({
+        return Either(success: right())
+    })
 }
 
 
