@@ -43,12 +43,21 @@ public enum Either<S, F> {
         }
     }
 
-    public func get() -> S {
+    public var successValue: S? {
         switch self {
         case .Success(let s):
             return s.value
         case .Failure(let f):
-            fatalError("Unexpected failure in Either: \(f.value)")
+            return nil
+        }
+    }
+
+    public var failureValue: F? {
+        switch self {
+        case .Success(let s):
+            return nil
+        case .Failure(let f):
+            return f.value
         }
     }
 }

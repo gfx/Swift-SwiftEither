@@ -128,10 +128,18 @@ class SwiftEitherTests: XCTestCase {
         }
     }
 
-    func testGet() {
+    func testSuccessValue() {
         let e = try(true, "foo")
-        XCTAssertEqual(e.get(), "foo")
+        XCTAssertEqual(e.successValue!, "foo")
+        XCTAssert(e.failureValue == nil)
     }
+
+    func testFailureValue() {
+        let e = try(false, "foo")
+        XCTAssert(e.successValue == nil)
+        XCTAssertEqual((e.failureValue?.reason)!, "foo")
+    }
+
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
