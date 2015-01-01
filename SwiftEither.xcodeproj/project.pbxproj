@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FAAD96201A53DA1F0012CE2A /* SwiftEither.h in Headers */ = {isa = PBXBuildFile; fileRef = FAAD961F1A53DA1F0012CE2A /* SwiftEither.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FAAD96261A53DA1F0012CE2A /* SwiftEither.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAD961A1A53DA1F0012CE2A /* SwiftEither.framework */; };
 		FAAD962D1A53DA1F0012CE2A /* SwiftEitherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD962C1A53DA1F0012CE2A /* SwiftEitherTests.swift */; };
 		FAAD96371A53DA310012CE2A /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD96361A53DA310012CE2A /* Either.swift */; };
@@ -26,7 +25,6 @@
 /* Begin PBXFileReference section */
 		FAAD961A1A53DA1F0012CE2A /* SwiftEither.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftEither.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAD961E1A53DA1F0012CE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAAD961F1A53DA1F0012CE2A /* SwiftEither.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftEither.h; sourceTree = "<group>"; };
 		FAAD96251A53DA1F0012CE2A /* SwiftEitherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftEitherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAD962B1A53DA1F0012CE2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAD962C1A53DA1F0012CE2A /* SwiftEitherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEitherTests.swift; sourceTree = "<group>"; };
@@ -73,7 +71,6 @@
 		FAAD961C1A53DA1F0012CE2A /* SwiftEither */ = {
 			isa = PBXGroup;
 			children = (
-				FAAD961F1A53DA1F0012CE2A /* SwiftEither.h */,
 				FAAD961D1A53DA1F0012CE2A /* Supporting Files */,
 				FAAD96361A53DA310012CE2A /* Either.swift */,
 			);
@@ -112,7 +109,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAD96201A53DA1F0012CE2A /* SwiftEither.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
