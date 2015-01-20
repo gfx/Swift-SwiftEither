@@ -127,28 +127,28 @@ class SwiftEitherTests: XCTestCase {
             XCTAssert(false, "not reached")
         }
     }
-	
-	func testMapMethodLeftUsed() {
-		let e = try(true, "foo").map { "\($0) bar" }
-		
-		switch e {
-		case .Success(let l):
-			XCTAssertEqual(l.value, "foo bar")
-		case .Failure(let r):
-			XCTFail("not reached")
-		}
-	}
-	
-	func testMapMethodRightUsed() {
-		let e = try(false, "foo").map { "\($0) bar" }
-		
-		switch e {
-		case .Success(let l):
-			XCTFail("not reached")
-		case .Failure(let r):
-			XCTAssertEqual(r.value.reason, "foo")
-		}
-	}
+    
+    func testMapMethodLeftUsed() {
+        let e = try(true, "foo").map { "\($0) bar" }
+        
+        switch e {
+        case .Success(let l):
+            XCTAssertEqual(l.value, "foo bar")
+        case .Failure(let r):
+            XCTFail("not reached")
+        }
+    }
+    
+    func testMapMethodRightUsed() {
+        let e = try(false, "foo").map { "\($0) bar" }
+        
+        switch e {
+        case .Success(let l):
+            XCTFail("not reached")
+        case .Failure(let r):
+            XCTAssertEqual(r.value.reason, "foo")
+        }
+    }
 
     func testSuccessValue() {
         let e = try(true, "foo")
