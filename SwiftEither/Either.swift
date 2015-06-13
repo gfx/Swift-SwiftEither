@@ -42,16 +42,16 @@ public enum Either<S, F> {
             return f()
         }
     }
-	
-	public func map<S0>(f: S -> S0) -> Either<S0, F> {
-		switch self {
-		case .Success(let s):
-			return Either<S0, F>(success: f(s.value))
-		case .Failure(let f):
-			return Either<S0, F>.Failure(f)
-		}
-	}
-	
+    
+    public func map<S0>(f: S -> S0) -> Either<S0, F> {
+        switch self {
+        case .Success(let s):
+            return Either<S0, F>(success: f(s.value))
+        case .Failure(let f):
+            return Either<S0, F>.Failure(f)
+        }
+    }
+    
     public var successValue: S? {
         switch self {
         case .Success(let s):
